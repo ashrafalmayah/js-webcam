@@ -2,42 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>A Fun Webcam</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/6bef7c705c.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
   <div class="photobooth">
     <div class="controls">
-      <button onClick="takePhoto()">Take Photo</button>
-<!--       <div class="rgb">
-        <label for="rmin">Red Min:</label>
-        <input type="range" min=0 max=255 name="rmin">
-        <label for="rmax">Red Max:</label>
-        <input type="range" min=0 max=255 name="rmax">
+      <button onClick="takePhoto()"><i class="fa-solid fa-camera"></i></button>
+      <div class="filters">
+        <input type="radio" name="filter" id="no">
+        <label for="no">No Filter</label>
+        <input type="radio" name="filter" id="redFilter">
+        <label for="redFilter">Red Filter</label>
+        <input type="radio" name="filter" id="rgbSplit">
+        <label for="rgbSplit">RGB Split Filter</label>
+        <input type="radio" name="filter" id="greenScreen">
+        <label for="greenScreen">Green Screen Filter</label>
 
-        <br>
-
-        <label for="gmin">Green Min:</label>
-        <input type="range" min=0 max=255 name="gmin">
-        <label for="gmax">Green Max:</label>
-        <input type="range" min=0 max=255 name="gmax">
-
-        <br>
-
-        <label for="bmin">Blue Min:</label>
-        <input type="range" min=0 max=255 name="bmin">
-        <label for="bmax">Blue Max:</label>
-        <input type="range" min=0 max=255 name="bmax">
-      </div> -->
+        <div class="rgb">
+          <div>
+            <label for="rmin">Red Min:</label>
+            <input type="number" min=0 max=255 value="128" name="rmin">
+          </div>
+          <div>
+            <label for="rmax">Red Max:</label>
+            <input type="number" min=0 max=255 value="128" name="rmax">
+          </div>
+          <div>
+            <label for="gmin">Green Min:</label>
+            <input type="number" min=0 max=255 value="128" name="gmin">
+          </div>
+          <div>
+            <label for="gmax">Green Max:</label>
+            <input type="number" min=0 max=255 value="128" name="gmax">
+          </div>
+          <div>
+            <label for="bmin">Blue Min:</label>
+            <input type="number" min=0 max=255 value="128" name="bmin">
+          </div>
+          <div>
+            <label for="bmax">Blue Max:</label>
+            <input type="number" min=0 max=255 value="128" name="bmax">
+          </div>
+        </div>
+      </div>
     </div>
 
-    <canvas class="photo"></canvas>
+    <div class="canvas">
+      <canvas class="photo"></canvas>
+    </div>
     <video class="player"></video>
     <div class="strip"></div>
   </div>
 
-  <audio class="snap" src="http://wesbos.com/demos/photobooth/snap.mp3" hidden></audio>
+  <!-- <audio class="snap" src="http://wesbos.com/demos/photobooth/snap.mp3" hidden></audio> -->
 
   <script src="scripts.js"></script>
 
